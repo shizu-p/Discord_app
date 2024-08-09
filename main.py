@@ -27,7 +27,7 @@ async def on_message(message):
 async def on_ready() :
 	print(f'Logged in as {client.user}')
 	channel = client.get_channel(notice_channel)
-	await channel.send('test')
+	await channel.send('hi')
 
 
 client.run(token)
