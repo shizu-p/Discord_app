@@ -7,9 +7,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 token = os.environ['TOKEN']
-
+notice_channel = os.environ['channel']
+notice_channel = int(notice_channel)
 intents=discord.Intents.all()
 client = discord.Client(intents=intents)
 
-notice_channel = 452272367167864833
 

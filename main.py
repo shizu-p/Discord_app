@@ -11,7 +11,11 @@ async def on_message(message):
 	msg = message.content
 	if message.content.startswith('/dice'):
 		parts = msg.split(' ')
+		if len(msg) <= 5 :
+			await message.channel.send('invalid')
 		dicemax = parts[1]
+		if not dicemax.isdigit() :
+			await message.channel.send('invalid')
 		dicemax = int(dicemax)
 		
 		dice_res = random.randint(1,dicemax)
@@ -24,9 +28,6 @@ async def on_ready() :
 	print(f'Logged in as {client.user}')
 	channel = client.get_channel(notice_channel)
 	await channel.send('test')
-	
-
-
 
 
 client.run(token)
